@@ -66,7 +66,7 @@ for each in flist:
      
     model = keras.models.Model(inputs=x, outputs=out)
      
-    optimizer = keras.optimizers.Adadelta()    
+    optimizer = keras.optimizers.Adadelta(learning_rate=1.0, rho=0.95, epsilon=1e-8)    
     model.compile(loss='categorical_crossentropy',
                   optimizer=optimizer,
                   metrics=['accuracy'])

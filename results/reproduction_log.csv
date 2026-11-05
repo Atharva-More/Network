@@ -1,3 +1,7 @@
 time,model,dataset,epochs,seed,paper_error,my_error,diff,note
 2026-11-05T12:11:36,ResNet,Adiac,1500,0,0.174,0.1765,0.0025,"patched_original, lowest train loss epoch"
 2026-11-05T12:18:07,ResNet,Adiac,1500,0,0.174,0.1765,0.0025,"patched_original, lowest train loss epoch"
+2026-11-05T14:00:28,FCN,Adiac,2000,0,0.143,0.1662,0.0232,"patched_original, lowest train loss epoch, CAM disabled"
+2026-11-05T14:00:28,FCN-lastepoch,Adiac,2000,0,0.143,0.1535,0.0105,"patched_original, final epoch (not paper protocol)"
+2026-11-05T14:16:48,MLP,Adiac,300,0,0.248,0.5754,0.3274,"patched_original, Adadelta lr=1.0, not converged"
+2026-11-05T14:48:10,MLP,Adiac,5000,0,0.248,0.6445,0.3965,"patched_original, Adadelta lr=1.0"
