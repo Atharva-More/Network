@@ -1,0 +1,3 @@
+time,model,dataset,epochs,seed,paper_error,my_error,diff,note
+2026-11-05T12:11:36,ResNet,Adiac,1500,0,0.174,0.1765,0.0025,"patched_original, lowest train loss epoch"
+2026-11-05T12:18:07,ResNet,Adiac,1500,0,0.174,0.1765,0.0025,"patched_original, lowest train loss epoch"

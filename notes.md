@@ -1,0 +1,33 @@
+# Reproduction notes
+
+## Setup
+- MacBook Air (CPU only), Python 3.12.10, TensorFlow 2.21.0, UCR 2015 archive
+- original_code/ = untouched as published; patched_original/ = minimal fixes to run on modern Keras; src/ = my own clean implementation
+
+## Problems running the published code (reproducibility findings)
+1. Data paths are relative and hardcoded (e.g. Adiac/Adiac_TRAIN); scripts only run from inside their own folder.
+2. Dataset name is hardcoded in each script (one dataset per edit).
+3. Old Keras API: `nb_epoch` -> `epochs`, `val_acc` -> `val_accuracy`, `idxmin` needs `()`.
+4. Adadelta default learning rate changed between Keras 1 (1.0) and modern Keras (0.001). With the modern default the MLP did not learn (loss ~2.7, val acc ~0.22 on Adiac).
+5. No requirements file, no random seeds, no multi-dataset runner.
+6. Convolution layers were written as Conv2D(n, k, 1, ...): in modern Keras the third argument is the stride, not a kernel width (to check).
+
+## Details missing from the paper
+- Number of epochs (code uses 1500 for ResNet), batch size
+- Learning-rate schedule: ResNet log ends at lr = 1e-4 although the paper states Adam lr = 0.001
+- Shortcut projection for mismatched channels (Eq. 3 says y = h3 + x, impossible when channels differ)
+- Filter counts: text says {64,128,128}, Figure 1 shows 64/64/64, 128x3, 128x3
+- Number of runs, seeds, and how "lowest training loss" is implemented
+- "val" set in the code is the test set
+
+## Results so far
+| Model | Dataset | Epochs | Seed | Paper error | My error | Notes |
+|---|---|---|---|---|---|---|
+| MLP | Adiac | ____ | - | 0.248 | ____ | lr = ____ |
+| ResNet | Adiac | 1500 | 1 run | 0.174 | 0.1765 | train acc 1.0, test loss ~0.89, ~5 s/epoch (~2 h) |
+| FCN | Adiac | ____ | ____ | 0.143 | ____ | |
+
+## Observations
+- ResNet: 0.1765 vs 0.174 is one test series (1/391 = 0.0026), within noise.
+- Last-epoch test accuracy fluctuates between 0.816 and 0.831, so epoch choice alone moves error ~0.7 pp.
+- ResNet clearly overfits (train acc 1.0, train loss ~1e-4).
