@@ -1,0 +1,2 @@
+dataset,epochs,seed,fixed_labels,test_error,paper_error,seconds
+Coffee,50,0,False,0.0,0,34

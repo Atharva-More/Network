@@ -31,3 +31,7 @@
 - ResNet: 0.1765 vs 0.174 is one test series (1/391 = 0.0026), within noise.
 - Last-epoch test accuracy fluctuates between 0.816 and 0.831, so epoch choice alone moves error ~0.7 pp.
 - ResNet clearly overfits (train acc 1.0, train loss ~1e-4).
+
+## Label rescaling check on all 85 UCR datasets (scripts/check_labels_all.py)
+- Only 50words is affected: 124/450 train and 121/455 test labels differ, 50 classes -> 44 effective classes.
+- No other dataset is affected, so the bug touches 1 of the 44 datasets in the paper's Table I.

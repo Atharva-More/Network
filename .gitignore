@@ -3,3 +3,5 @@ data/
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
+scripts/_run_resnet_tmp.py
+scripts/_run_resnet_tmp.py
