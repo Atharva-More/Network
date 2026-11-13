@@ -35,3 +35,13 @@
 ## Label rescaling check on all 85 UCR datasets (scripts/check_labels_all.py)
 - Only 50words is affected: 124/450 train and 121/455 test labels differ, 50 classes -> 44 effective classes.
 - No other dataset is affected, so the bug touches 1 of the 44 datasets in the paper's Table I.
+
+## Exact per-seed Adiac results (ResNet, scripts/run_resnet.py)
+| Seed | 300 epochs | 1500 epochs |
+|---|---|---|
+| 0 | 0.2455 | - |
+| 1 | 0.2430 | 0.2506 |
+| 2 | 0.1816 | 0.1893 |
+- Same-seed 1500 vs 300 epochs: +0.0076 and +0.0077 (3 test series each): no benefit from 5x longer training (141/117 min vs 26/26 min).
+- Results fall in two groups (~0.18-0.19 and ~0.24-0.25); the seed matters more than the epoch count. More seeds needed to tell whether this is a real two-mode pattern.
+- Earlier unseeded 1500-epoch run: 0.1765 (better group), as is the paper's 0.174.

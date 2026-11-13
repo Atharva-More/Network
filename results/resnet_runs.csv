@@ -1,2 +1,7 @@
 dataset,epochs,seed,fixed_labels,test_error,paper_error,seconds
 Coffee,50,0,False,0.0,0,34
+Adiac,300,0,False,0.2455,0.174,1354
+Adiac,300,1,False,0.243,0.174,1587
+Adiac,300,2,False,0.1816,0.174,1562
+Adiac,1500,1,False,0.2506,0.174,8454
+Adiac,1500,2,False,0.1893,0.174,7021
