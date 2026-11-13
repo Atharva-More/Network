@@ -2,6 +2,7 @@ dataset,epochs,fixed_labels,kernel1d,n,mean,std,paper,minutes,diff_vs_paper
 50words,300,False,False,1,0.3231,,0.273,41.7,0.0501
 50words,300,True,False,1,0.3143,,0.273,44.4,0.0413
 Adiac,300,False,False,5,0.2153,0.0282,0.174,23.9,0.0413
+Adiac,300,False,True,5,0.1995,0.0363,0.174,7.0,0.0255
 Adiac,1500,False,False,2,0.22,0.0433,0.174,129.0,0.0459
 Beef,300,False,False,3,0.5889,0.0509,0.233,4.9,0.3559
 Beef,300,False,True,3,0.5667,0.0577,0.233,1.9,0.3337

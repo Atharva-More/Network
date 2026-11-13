@@ -34,3 +34,8 @@ OliveOil,300,2,False,True,0.1333,0.133,128
 ECGFiveDays,300,0,False,True,0.1731,0.045,335
 ECGFiveDays,300,1,False,True,0.1266,0.045,325
 ECGFiveDays,300,2,False,True,0.043,0.045,318
+Adiac,300,0,False,True,0.1995,0.174,400
+Adiac,300,1,False,True,0.2506,0.174,430
+Adiac,300,2,False,True,0.156,0.174,426
+Adiac,300,3,False,True,0.2148,0.174,437
+Adiac,300,4,False,True,0.1765,0.174,407

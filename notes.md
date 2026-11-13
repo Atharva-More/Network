@@ -70,3 +70,9 @@
 - Initialisation hypothesis (k x k vs k x 1) does not explain the Beef gap.
 - OliveOil is consistent with the paper (seeds 1-2 average ~0.133); seed spread (std 0.07-0.12) shows single-run numbers are unreliable on 30-series test sets.
 - Beef: all 3 seeds >= 0.53 vs 0.233 in the paper: unexplained. Untested candidates: Adam epsilon (paper 1e-8 vs Keras default), BatchNorm with batch size 3.
+
+## Improvement 1: true 1-D kernels (k x 1 instead of k x k)
+- Parameters: 2,866,149 -> 527,845 (5.4x fewer); benchmark 2.67 -> 0.68 s/epoch (3.9x); real Adiac runs 23.9 -> 7.0 min (3.4x).
+- Adiac, 5 seeds, 300 epochs: baseline 0.2153 +- 0.0282, 1-D 0.1995 +- 0.0363 (Welch t ~ 0.8: no detectable difference). Paired by seed 0-2: -0.046, +0.008, -0.026.
+- Beef, OliveOil, ECGFiveDays (3 seeds): no detectable difference; 2.6-3.7x faster.
+- Paper's 0.174 lies inside the 1-D spread (2 of 5 seeds at or below 0.1765).
