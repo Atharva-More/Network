@@ -9,3 +9,12 @@ Adiac,300,3,False,0.2097,0.174,1274
 Adiac,300,4,False,0.1969,0.174,1387
 50words,300,0,False,0.3231,0.273,2500
 50words,300,0,True,0.3143,0.273,2662
+Gun_Point,300,0,False,0.0133,0.007,268
+Beef,300,0,False,0.5333,0.233,361
+OliveOil,300,0,False,0.3333,0.133,466
+ECGFiveDays,300,0,False,0.2869,0.045,1424
+ItalyPowerDemand,300,0,False,0.036,0.04,490
+TwoLeadECG,300,0,False,0.0009,0,1458
+FaceFour,300,0,False,0.0795,0.068,334
+SonyAIBORobotSurface,300,0,False,0.015,0.015,482
+Trace,300,0,False,0.02,0,564

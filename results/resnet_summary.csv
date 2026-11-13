@@ -3,4 +3,13 @@ dataset,epochs,fixed_labels,n,mean,std,paper,minutes,diff_vs_paper
 50words,300,True,1,0.3143,,0.273,44.4,0.0413
 Adiac,300,False,5,0.2153,0.0282,0.174,23.9,0.0413
 Adiac,1500,False,2,0.22,0.0433,0.174,129.0,0.0459
+Beef,300,False,1,0.5333,,0.233,6.0,0.3003
 Coffee,50,False,1,0.0,,0.0,0.6,0.0
+ECGFiveDays,300,False,1,0.2869,,0.045,23.7,0.2419
+FaceFour,300,False,1,0.0795,,0.068,5.6,0.0115
+Gun_Point,300,False,1,0.0133,,0.007,4.5,0.0063
+ItalyPowerDemand,300,False,1,0.036,,0.04,8.2,-0.004
+OliveOil,300,False,1,0.3333,,0.133,7.8,0.2003
+SonyAIBORobotSurface,300,False,1,0.015,,0.015,8.0,0.0
+Trace,300,False,1,0.02,,0.0,9.4,0.02
+TwoLeadECG,300,False,1,0.0009,,0.0,24.3,0.0009

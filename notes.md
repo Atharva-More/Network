@@ -53,3 +53,9 @@
 - Published labels (44 effective classes): 0.3231 | corrected labels (50 classes): 0.3143 | paper: 0.273
 - Difference 0.0088 = 4 test series; within seed noise, no measurable effect from one paired run.
 - Both variants are ~4-5 points above the paper, like Adiac.
+
+## ResNet on 10 small datasets, 300 epochs, seed 0
+- Within 1-2 test series of the paper: Coffee, SonyAIBORobotSurface, TwoLeadECG, Trace, Gun_Point, FaceFour; ItalyPowerDemand 4 series better.
+- Large gaps: Beef 0.533 vs 0.233 (9/30 series), OliveOil 0.333 vs 0.133 (6/30), ECGFiveDays 0.287 vs 0.045 (208/861).
+- Not explained by training-set size alone: TwoLeadECG has the same 23 training series / 2 classes as ECGFiveDays and matches the paper.
+- Hypothesis (untested): Conv2D(f, k, 1) is a k x k kernel in Keras 3 (k x 1 in Keras 1), so Glorot initialisation differs.
