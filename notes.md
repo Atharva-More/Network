@@ -45,3 +45,11 @@
 - Same-seed 1500 vs 300 epochs: +0.0076 and +0.0077 (3 test series each): no benefit from 5x longer training (141/117 min vs 26/26 min).
 - Results fall in two groups (~0.18-0.19 and ~0.24-0.25); the seed matters more than the epoch count. More seeds needed to tell whether this is a real two-mode pattern.
 - Earlier unseeded 1500-epoch run: 0.1765 (better group), as is the paper's 0.174.
+
+## ResNet Adiac, 5 seeds at 300 epochs
+- Mean 0.2153, std 0.0282 (paper 0.174, one run): the paper's value is ~1.5 std below our mean. Consistent with a favourable single draw, but a small systematic gap cannot be excluded with 5 seeds.
+
+## 50words label-bug comparison (300 epochs, seed 0)
+- Published labels (44 effective classes): 0.3231 | corrected labels (50 classes): 0.3143 | paper: 0.273
+- Difference 0.0088 = 4 test series; within seed noise, no measurable effect from one paired run.
+- Both variants are ~4-5 points above the paper, like Adiac.

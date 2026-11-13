@@ -1,4 +1,6 @@
 dataset,epochs,fixed_labels,n,mean,std,paper,minutes,diff_vs_paper
-Adiac,300,False,3,0.2234,0.0362,0.174,25.0,0.0494
+50words,300,False,1,0.3231,,0.273,41.7,0.0501
+50words,300,True,1,0.3143,,0.273,44.4,0.0413
+Adiac,300,False,5,0.2153,0.0282,0.174,23.9,0.0413
 Adiac,1500,False,2,0.22,0.0433,0.174,129.0,0.0459
 Coffee,50,False,1,0.0,,0.0,0.6,0.0
