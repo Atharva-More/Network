@@ -22,6 +22,7 @@ p.add_argument("dataset")
 p.add_argument("--epochs", type=int, default=300)
 p.add_argument("--seed", type=int, default=0)
 p.add_argument("--fix-labels", action="store_true")
+p.add_argument("--kernel1d", action="store_true")
 a = p.parse_args()
 
 def sub1(pat, rep, text):
@@ -43,9 +44,12 @@ if a.fix_labels:
     src = sub1(r"^\s*y_test = \(y_test - .*$",
                "    y_test = np.searchsorted(classes, y_test)", src)
 
+if a.kernel1d:   # k x k kernels -> k x 1 kernels, as in Keras 1
+    src, n = re.subn(r"Conv2D\(([^,]+), (8|5|3), 1, ?padding", r"Conv2D(\1, (\2, 1), 1, padding", src)
+    assert n == 9, f"expected 9 conv layers, matched {n}"
 tmp = os.path.abspath("scripts/_run_resnet_tmp.py")
 open(tmp, "w").write(src)
-tag = f"{a.dataset}_e{a.epochs}_s{a.seed}{'_fixed' if a.fix_labels else ''}"
+tag = f"{a.dataset}_e{a.epochs}_s{a.seed}{'_fixed' if a.fix_labels else ''}{'_k1d' if a.kernel1d else ''}"
 os.makedirs("results/logs", exist_ok=True)
 log = os.path.abspath(f"results/logs/resnet_{tag}.log")
 
@@ -70,5 +74,5 @@ new = not os.path.exists(path)
 with open(path, "a", newline="") as f:
     w = csv.writer(f)
     if new:
-        w.writerow(["dataset", "epochs", "seed", "fixed_labels", "test_error", "paper_error", "seconds"])
-    w.writerow([a.dataset, a.epochs, a.seed, a.fix_labels, err, paper, secs])
+        w.writerow(["dataset", "epochs", "seed", "fixed_labels", "kernel1d", "test_error", "paper_error", "seconds"])
+    w.writerow([a.dataset, a.epochs, a.seed, a.fix_labels, a.kernel1d, err, paper, secs])

@@ -59,3 +59,14 @@
 - Large gaps: Beef 0.533 vs 0.233 (9/30 series), OliveOil 0.333 vs 0.133 (6/30), ECGFiveDays 0.287 vs 0.045 (208/861).
 - Not explained by training-set size alone: TwoLeadECG has the same 23 training series / 2 classes as ECGFiveDays and matches the paper.
 - Hypothesis (untested): Conv2D(f, k, 1) is a k x k kernel in Keras 3 (k x 1 in Keras 1), so Glorot initialisation differs.
+
+## k x 1 vs k x k kernels (ResNet, 300 epochs, 3 seeds, scripts/run_resnet.py --kernel1d)
+| Dataset | baseline mean±std (min/run) | kernel1d mean±std (min/run) | paper |
+|---|---|---|---|
+| Beef | 0.589±0.051 (4.9) | 0.567±0.058 (1.9) | 0.233 |
+| OliveOil | 0.200±0.116 (6.6) | 0.189±0.069 (2.2) | 0.133 |
+| ECGFiveDays | 0.173±0.104 (19.9) | 0.114±0.066 (5.4) | 0.045 |
+- kernel1d is 2.6-3.7x faster; no detectable accuracy difference with 3 seeds.
+- Initialisation hypothesis (k x k vs k x 1) does not explain the Beef gap.
+- OliveOil is consistent with the paper (seeds 1-2 average ~0.133); seed spread (std 0.07-0.12) shows single-run numbers are unreliable on 30-series test sets.
+- Beef: all 3 seeds >= 0.53 vs 0.233 in the paper: unexplained. Untested candidates: Adam epsilon (paper 1e-8 vs Keras default), BatchNorm with batch size 3.
