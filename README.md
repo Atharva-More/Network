@@ -44,6 +44,8 @@ python scripts/make_figure.py
 Every run appends a row to `results/resnet_runs.csv`; the log of each run is in `results/logs/`.
 
 ## Results
+First reproduction run (authors' settings, Adiac, 1500 epochs, one unseeded run): test error 0.1765 vs 0.174 in the paper. Seeded follow-ups show the spread across seeds (Adiac 0.156-0.251), so this agreement is partly luck.
+
 See `results/resnet_paper_vs_ours.md` (paper vs ours) and `results/resnet_figure.png`.
 
 ## Findings

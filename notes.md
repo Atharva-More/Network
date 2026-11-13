@@ -76,3 +76,9 @@
 - Adiac, 5 seeds, 300 epochs: baseline 0.2153 +- 0.0282, 1-D 0.1995 +- 0.0363 (Welch t ~ 0.8: no detectable difference). Paired by seed 0-2: -0.046, +0.008, -0.026.
 - Beef, OliveOil, ECGFiveDays (3 seeds): no detectable difference; 2.6-3.7x faster.
 - Paper's 0.174 lies inside the 1-D spread (2 of 5 seeds at or below 0.1765).
+
+## First result (authors' settings)
+- patched_original/ResNet.py, Adiac, 1500 epochs, one run, TF seed not controlled: test error 0.1765 vs paper 0.174 (1 test series). Train acc 1.0, test loss ~0.89.
+- Controlled follow-up (scripts/run_resnet.py): 5 seeds at 300 epochs -> 0.2153 ± 0.0282 (range 0.18-0.25); 2 seeds at 1500 epochs -> 0.2200 ± 0.0433.
+- Reading: the first run and the paper's value sit at the favourable end of the seed distribution. The match is real, but one run does not establish the expected error.
+- Datasets within 2 test series of the paper (one seed): see results/resnet_paper_vs_ours.md, column "Within 2 series".

@@ -1,0 +1,2 @@
+dataset,epochs,test_error,note
+Adiac,1500,0.1765,patched_original/ResNet.py unchanged except API fixes; TF seed not controlled; test error at lowest-training-loss epoch (val_accuracy 0.8235)
