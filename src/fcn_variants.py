@@ -74,7 +74,7 @@ def main():
     err_last = test_err()
     model.load_weights(ckpt)
     err_sel = test_err()
-    row = dict(dataset=a.dataset, seed=a.seed, se=a.se, ls=a.ls,
+    row = dict(dataset=a.dataset, seed=a.seed, epochs=a.epochs, se=a.se, ls=a.ls,
                err_trainloss_epoch=round(err_sel, 4), err_last=round(err_last, 4),
                best_epoch=int(np.argmin(hist.history["loss"])) + 1,
                params=model.count_params(), seconds=secs)

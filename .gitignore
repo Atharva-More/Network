@@ -5,3 +5,4 @@ __pycache__/
 .DS_Store
 scripts/_run_resnet_tmp.py
 scripts/_run_resnet_tmp.py
+scripts/_run_fcn_tmp.py

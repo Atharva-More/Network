@@ -1,0 +1,11 @@
+dataset,epochs,seed,fixed_labels,kernel1d,err_trainloss_epoch,err_last,paper_error,seconds
+Beef,2000,0,False,False,0.5333,0.5333,0.25,1357
+Beef,2000,1,False,False,0.4333,0.4333,0.25,1325
+Beef,2000,2,False,False,0.4667,0.4667,0.25,1453
+OliveOil,2000,0,False,False,0.2333,0.2333,0.167,1754
+OliveOil,2000,1,False,False,0.1333,0.1333,0.167,1794
+OliveOil,2000,2,False,False,0.2667,0.2667,0.167,1629
+FaceFour,2000,0,False,False,0.2386,0.2386,0.068,1767
+FaceFour,2000,1,False,False,0.2614,0.2614,0.068,1789
+FaceFour,2000,2,False,False,0.625,0.625,0.068,1578
+ECGFiveDays,2000,0,False,False,0.2474,0.2474,0.015,4787

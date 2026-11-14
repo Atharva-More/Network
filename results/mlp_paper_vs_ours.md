@@ -1,0 +1,7 @@
+| Setting | Runs | Epochs | Adiac test accuracy (%) |
+|---|---|---|---|
+| Paper (Wang et al. 2016), 3x500 MLP, Adadelta | 1 (not stated) | 5000 | 75.20 |
+| Repo as published, TF 2.x (Adadelta default lr=0.001) | 1 | 5000 | 22.51 |
+| Repo as published, 2017 Keras/TF1 (Adadelta lr=1.0), min train loss | 5 | 5000 | 35.65 ± 1.33 |
+| Ours A1: 128-unit MLP, Adam, final epoch | 5 | 186 | 59.34 ± 2.93 |
+| Ours O5: 128-unit MLP, Adam, min train loss | 5 | 5000 | 73.45 ± 2.29 |

@@ -1,0 +1,136 @@
+TensorFlow version: 2.16.2
+Epochs: 5000 | Seeds: [813306, 813307, 813308, 813309, 813310]
+Train/test: (390, 176) (391, 176)
+
+Starting seed 813306
+  Epoch    1 | train_loss 3.7494 | train_acc 0.0410 | test_acc 0.0537
+  Epoch  250 | train_loss 0.9440 | train_acc 0.7282 | test_acc 0.5959
+  Epoch  500 | train_loss 0.5518 | train_acc 0.8205 | test_acc 0.6803
+  Epoch  750 | train_loss 0.3818 | train_acc 0.8718 | test_acc 0.7084
+  Epoch 1000 | train_loss 0.2615 | train_acc 0.9308 | test_acc 0.7161
+  Epoch 1250 | train_loss 0.2183 | train_acc 0.9333 | test_acc 0.7136
+  Epoch 1500 | train_loss 0.1789 | train_acc 0.9513 | test_acc 0.7187
+  Epoch 1750 | train_loss 0.1473 | train_acc 0.9641 | test_acc 0.7161
+  Epoch 2000 | train_loss 0.2163 | train_acc 0.9179 | test_acc 0.6905
+  Epoch 2250 | train_loss 0.1345 | train_acc 0.9538 | test_acc 0.7238
+  Epoch 2500 | train_loss 0.1137 | train_acc 0.9615 | test_acc 0.7263
+  Epoch 2750 | train_loss 0.0915 | train_acc 0.9641 | test_acc 0.7340
+  Epoch 3000 | train_loss 0.0666 | train_acc 0.9795 | test_acc 0.7442
+  Epoch 3250 | train_loss 0.0500 | train_acc 0.9872 | test_acc 0.7468
+  Epoch 3500 | train_loss 0.0647 | train_acc 0.9795 | test_acc 0.7238
+  Epoch 3750 | train_loss 0.0584 | train_acc 0.9795 | test_acc 0.7238
+  Epoch 4000 | train_loss 0.0358 | train_acc 0.9923 | test_acc 0.7442
+  Epoch 4250 | train_loss 0.0249 | train_acc 0.9974 | test_acc 0.7545
+  Epoch 4500 | train_loss 0.0288 | train_acc 0.9949 | test_acc 0.7417
+  Epoch 4750 | train_loss 0.0246 | train_acc 0.9923 | test_acc 0.7391
+  Epoch 5000 | train_loss 0.0226 | train_acc 0.9949 | test_acc 0.7494
+Seed 813306 | paper-style epoch 4994 | selected test 75.70% | diagnostic max test 76.73% at epoch 4919
+
+Starting seed 813307
+  Epoch    1 | train_loss 3.6627 | train_acc 0.0641 | test_acc 0.0614
+  Epoch  250 | train_loss 0.7936 | train_acc 0.7897 | test_acc 0.6931
+  Epoch  500 | train_loss 0.4443 | train_acc 0.8821 | test_acc 0.6803
+  Epoch  750 | train_loss 0.2833 | train_acc 0.9154 | test_acc 0.7340
+  Epoch 1000 | train_loss 0.1974 | train_acc 0.9462 | test_acc 0.7187
+  Epoch 1250 | train_loss 0.1754 | train_acc 0.9436 | test_acc 0.7340
+  Epoch 1500 | train_loss 0.1446 | train_acc 0.9436 | test_acc 0.7366
+  Epoch 1750 | train_loss 0.1561 | train_acc 0.9462 | test_acc 0.6957
+  Epoch 2000 | train_loss 0.1300 | train_acc 0.9667 | test_acc 0.7110
+  Epoch 2250 | train_loss 0.1079 | train_acc 0.9615 | test_acc 0.7008
+  Epoch 2500 | train_loss 0.0862 | train_acc 0.9769 | test_acc 0.7033
+  Epoch 2750 | train_loss 0.0681 | train_acc 0.9769 | test_acc 0.7289
+  Epoch 3000 | train_loss 0.0582 | train_acc 0.9795 | test_acc 0.7161
+  Epoch 3250 | train_loss 0.0525 | train_acc 0.9846 | test_acc 0.7238
+  Epoch 3500 | train_loss 0.1203 | train_acc 0.9513 | test_acc 0.7212
+  Epoch 3750 | train_loss 0.0458 | train_acc 0.9846 | test_acc 0.7468
+  Epoch 4000 | train_loss 0.1134 | train_acc 0.9667 | test_acc 0.7391
+  Epoch 4250 | train_loss 0.0267 | train_acc 0.9923 | test_acc 0.7494
+  Epoch 4500 | train_loss 0.2282 | train_acc 0.9231 | test_acc 0.7059
+  Epoch 4750 | train_loss 0.0196 | train_acc 0.9974 | test_acc 0.7596
+  Epoch 5000 | train_loss 0.0513 | train_acc 0.9846 | test_acc 0.7340
+Seed 813307 | paper-style epoch 4750 | selected test 75.96% | diagnostic max test 76.73% at epoch 4861
+
+Starting seed 813308
+  Epoch    1 | train_loss 3.7920 | train_acc 0.0308 | test_acc 0.0691
+  Epoch  250 | train_loss 0.7745 | train_acc 0.8026 | test_acc 0.6164
+  Epoch  500 | train_loss 0.4438 | train_acc 0.8769 | test_acc 0.6931
+  Epoch  750 | train_loss 0.2698 | train_acc 0.9205 | test_acc 0.7059
+  Epoch 1000 | train_loss 0.2799 | train_acc 0.9128 | test_acc 0.6496
+  Epoch 1250 | train_loss 0.1301 | train_acc 0.9641 | test_acc 0.7136
+  Epoch 1500 | train_loss 0.0907 | train_acc 0.9769 | test_acc 0.7187
+  Epoch 1750 | train_loss 0.0737 | train_acc 0.9795 | test_acc 0.7212
+  Epoch 2000 | train_loss 0.0712 | train_acc 0.9769 | test_acc 0.7136
+  Epoch 2250 | train_loss 0.0841 | train_acc 0.9795 | test_acc 0.6701
+  Epoch 2500 | train_loss 0.0959 | train_acc 0.9744 | test_acc 0.6777
+  Epoch 2750 | train_loss 0.0987 | train_acc 0.9692 | test_acc 0.6931
+  Epoch 3000 | train_loss 0.0435 | train_acc 0.9846 | test_acc 0.6957
+  Epoch 3250 | train_loss 0.1850 | train_acc 0.9385 | test_acc 0.6777
+  Epoch 3500 | train_loss 0.0299 | train_acc 0.9974 | test_acc 0.7212
+  Epoch 3750 | train_loss 0.0336 | train_acc 0.9897 | test_acc 0.7161
+  Epoch 4000 | train_loss 0.0208 | train_acc 0.9949 | test_acc 0.7161
+  Epoch 4250 | train_loss 0.0259 | train_acc 0.9923 | test_acc 0.7136
+  Epoch 4500 | train_loss 0.0205 | train_acc 0.9974 | test_acc 0.7136
+  Epoch 4750 | train_loss 0.0141 | train_acc 0.9974 | test_acc 0.7136
+  Epoch 5000 | train_loss 0.0175 | train_acc 0.9949 | test_acc 0.7136
+Seed 813308 | paper-style epoch 4823 | selected test 70.84% | diagnostic max test 74.17% at epoch 1668
+
+Starting seed 813309
+  Epoch    1 | train_loss 3.6819 | train_acc 0.0462 | test_acc 0.0844
+  Epoch  250 | train_loss 0.7761 | train_acc 0.7769 | test_acc 0.6215
+  Epoch  500 | train_loss 0.4068 | train_acc 0.8872 | test_acc 0.7008
+  Epoch  750 | train_loss 0.2614 | train_acc 0.9359 | test_acc 0.6829
+  Epoch 1000 | train_loss 0.2374 | train_acc 0.9231 | test_acc 0.6905
+  Epoch 1250 | train_loss 0.1639 | train_acc 0.9538 | test_acc 0.6854
+  Epoch 1500 | train_loss 0.1130 | train_acc 0.9744 | test_acc 0.6829
+  Epoch 1750 | train_loss 0.0860 | train_acc 0.9795 | test_acc 0.6752
+  Epoch 2000 | train_loss 0.0807 | train_acc 0.9821 | test_acc 0.6419
+  Epoch 2250 | train_loss 0.1033 | train_acc 0.9590 | test_acc 0.7008
+  Epoch 2500 | train_loss 0.2271 | train_acc 0.9333 | test_acc 0.6343
+  Epoch 2750 | train_loss 0.1760 | train_acc 0.9385 | test_acc 0.6624
+  Epoch 3000 | train_loss 0.0573 | train_acc 0.9795 | test_acc 0.7391
+  Epoch 3250 | train_loss 0.0448 | train_acc 0.9846 | test_acc 0.7238
+  Epoch 3500 | train_loss 0.0322 | train_acc 0.9923 | test_acc 0.7340
+  Epoch 3750 | train_loss 0.0330 | train_acc 0.9897 | test_acc 0.7315
+  Epoch 4000 | train_loss 0.0289 | train_acc 0.9923 | test_acc 0.7289
+  Epoch 4250 | train_loss 0.0266 | train_acc 0.9897 | test_acc 0.7187
+  Epoch 4500 | train_loss 0.0197 | train_acc 0.9949 | test_acc 0.7289
+  Epoch 4750 | train_loss 0.2837 | train_acc 0.9385 | test_acc 0.6982
+  Epoch 5000 | train_loss 0.0389 | train_acc 0.9897 | test_acc 0.7340
+Seed 813309 | paper-style epoch 4956 | selected test 72.89% | diagnostic max test 74.94% at epoch 2971
+
+Starting seed 813310
+  Epoch    1 | train_loss 3.7298 | train_acc 0.0436 | test_acc 0.0946
+  Epoch  250 | train_loss 0.7795 | train_acc 0.7564 | test_acc 0.6087
+  Epoch  500 | train_loss 0.4487 | train_acc 0.8692 | test_acc 0.6624
+  Epoch  750 | train_loss 0.2673 | train_acc 0.9359 | test_acc 0.6598
+  Epoch 1000 | train_loss 0.1846 | train_acc 0.9513 | test_acc 0.6394
+  Epoch 1250 | train_loss 0.1368 | train_acc 0.9641 | test_acc 0.6189
+  Epoch 1500 | train_loss 0.1356 | train_acc 0.9590 | test_acc 0.6368
+  Epoch 1750 | train_loss 0.1112 | train_acc 0.9692 | test_acc 0.6189
+  Epoch 2000 | train_loss 0.1016 | train_acc 0.9744 | test_acc 0.6394
+  Epoch 2250 | train_loss 0.0900 | train_acc 0.9667 | test_acc 0.5959
+  Epoch 2500 | train_loss 0.0914 | train_acc 0.9667 | test_acc 0.6445
+  Epoch 2750 | train_loss 0.0571 | train_acc 0.9872 | test_acc 0.7008
+  Epoch 3000 | train_loss 0.0755 | train_acc 0.9769 | test_acc 0.6905
+  Epoch 3250 | train_loss 0.0808 | train_acc 0.9718 | test_acc 0.6803
+  Epoch 3500 | train_loss 0.0464 | train_acc 0.9872 | test_acc 0.6957
+  Epoch 3750 | train_loss 0.0967 | train_acc 0.9641 | test_acc 0.6343
+  Epoch 4000 | train_loss 0.0254 | train_acc 0.9923 | test_acc 0.7187
+  Epoch 4250 | train_loss 0.0232 | train_acc 0.9872 | test_acc 0.7059
+  Epoch 4500 | train_loss 0.0556 | train_acc 0.9821 | test_acc 0.6803
+  Epoch 4750 | train_loss 0.0215 | train_acc 0.9923 | test_acc 0.6905
+  Epoch 5000 | train_loss 0.0258 | train_acc 0.9923 | test_acc 0.6931
+Seed 813310 | paper-style epoch 4970 | selected test 71.87% | diagnostic max test 73.40% at epoch 4356
+
+O5 PAPER-STYLE RESULTS (lowest TRAINING loss)
+  seed  selected_epoch_min_train_loss  selected_test_accuracy_history  max_test_accuracy_DIAGNOSTIC_ONLY
+813306                           4994                        0.757033                           0.767263
+813307                           4750                        0.759591                           0.767263
+813308                           4823                        0.708440                           0.741688
+813309                           4956                        0.728900                           0.749361
+813310                           4970                        0.718670                           0.734015
+Mean selected test accuracy: 73.45%
+Median selected test accuracy: 72.89%
+Published Adiac MLP test accuracy: 75.20%
+186-epoch A1 mean test accuracy: 59.34%
+All per-epoch histories and selected checkpoint models saved in: /workspace/optimization/results/official_test/O5_5000

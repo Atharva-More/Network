@@ -23,9 +23,12 @@
 ## Results so far
 | Model | Dataset | Epochs | Seed | Paper error | My error | Notes |
 |---|---|---|---|---|---|---|
-| MLP | Adiac | ____ | - | 0.248 | ____ | lr = ____ |
+| MLP (published code, TF 2.x default Adadelta lr 0.001) | Adiac | 5000 | 1 run | 0.248 | 0.7749 | loss stuck ~2.73 |
+| MLP (published code, 2017 Keras/TF1, 5 seeds) | Adiac | 5000 | 813306-10 | 0.248 | 0.6435 ± 0.0133 | min-train-loss epoch |
+| MLP (ours, 128 units, Adam) | Adiac | 5000 | 813306-10 | 0.248 | 0.2655 ± 0.0229 | 27,429 params, see MLP section |
 | ResNet | Adiac | 1500 | 1 run | 0.174 | 0.1765 | train acc 1.0, test loss ~0.89, ~5 s/epoch (~2 h) |
-| FCN | Adiac | ____ | ____ | 0.143 | ____ | |
+| FCN (1-D kernels) | Adiac | 300 | 0-4 | 0.143 | 0.379 ± 0.044 | undertrained |
+| FCN (1-D kernels) | Adiac | 2000 | 0-2 | 0.143 | 0.207 ± 0.049 | 25 test series above paper |
 
 ## Observations
 - ResNet: 0.1765 vs 0.174 is one test series (1/391 = 0.0026), within noise.
@@ -86,4 +89,35 @@
 ## FCN improvement: SE blocks and label smoothing (src/fcn_variants.py)
 - First attempt (experiments/) selected the checkpoint by test accuracy (validation_data = test set): optimistic, not comparable with the paper. Replaced by a protocol that never uses test data during training.
 - Design: 4 variants (base, +SE, +LS 0.1, +SE+LS), same seeds, 300 epochs, selection by lowest training loss (paper) and last epoch both reported.
-- Results: see scripts/summarize_fcn.py output (to be filled in).
+- Results (300 epochs, mean test error at lowest-training-loss epoch, 7 datasets): base 0.292, +SE 0.282, +LS 0.282, +SE+LS 0.325.
+- Wilcoxon over datasets: +SE p=0.27, +LS p=0.94 (last epoch: 0.94 / 0.94); +SE+LS worse on 7/7 datasets, p=0.016. SE adds 24,576 params (+9%).
+- Conclusion: no measurable gain; baseline is undertrained at 300 epochs, so the ablation cannot say whether SE/LS help a converged FCN. The 2000-epoch ablation is not reported (TODO if finished).
+
+## FCN reproduction (1-D-kernel FCN, paper's selection rule)
+| Dataset | Paper | 300 epochs | 2000 epochs |
+|---|---|---|---|
+| Adiac | 0.143 | 0.379 ± 0.044 (n=5) | 0.207 ± 0.049 (n=3) |
+| Beef | 0.250 | 0.444 ± 0.019 | 0.456 ± 0.051 |
+| ECGFiveDays | 0.015 | 0.160 ± 0.044 | 0.214 ± 0.100 |
+| FaceFour | 0.068 | 0.246 ± 0.093 | 0.295 ± 0.099 |
+| GunPoint | 0.000 | 0.011 ± 0.019 | - |
+| OliveOil | 0.167 | 0.767 ± 0.145 | 0.211 ± 0.051 |
+| SwedishLeaf | 0.034 | 0.036 ± 0.004 | - |
+- FCN is undertrained at 300 epochs (Adiac 0.379 -> 0.207, OliveOil 0.767 -> 0.211 at 2000), unlike ResNet (1500 epochs gave no gain).
+- Beef, FaceFour, ECGFiveDays do not improve with 2000 epochs; Adiac still 25 test series above paper. Seed std up to 0.10-0.15.
+- The authors' FCN uses Conv2D(f, k, 1) too: k x k kernels in modern Keras. Adiac params: 1,129,637 (k x k) vs 270,501 (k x 1), 4.2x fewer, same function.
+- Time per run on Adiac: 2.8 min (300 epochs), ~16 min (2000 epochs).
+- FCN script also has the label rescaling bug and a CAM block that crashes (removed backend function); CAM disabled in patched copy.
+
+## MLP reproduction and improvement (Adiac, paper 0.248 error = 75.2% accuracy)
+- Authors' MLP: 3x500 ReLU, dropout 0.1/0.2/0.3, Adadelta, 5000 epochs, 608,037 params.
+- Published code, TF 2.x (default Adadelta lr 0.001): 22.51% accuracy (loss stuck ~2.73).
+- Published code, 2017 Keras/TF1 environment, 5 seeds 813306-813310: 35.65 ± 1.33% (34.3-37.6). Best test epoch (diagnostic) averages 48.2%, last epoch 34.4%; train accuracy at selected epoch ~61% (dropout active) vs paper's "almost all 100%". Not a selection-rule artefact.
+- Ours: 176-128-37, ReLU, Adam 1e-3, batch 16, no dropout/L2, 27,429 params (22x fewer).
+  - A1 (186 epochs, last epoch): 59.34 ± 2.93%.
+  - O5 (5000 epochs, lowest train loss, seeds 813306-10): 73.45 ± 2.29% (70.84-75.96); 2 of 5 seeds above paper's 75.2%.
+  - O5 vs paper one-sample t p=0.16 (not distinguishable with n=5); O5 vs 2017 baseline Welch p<1e-7; O5 vs A1 paired p=0.001.
+- Selected epochs are 4750-4994 of 5000, so the paper's rule is almost the last epoch (mean final-epoch acc 72.48%). Oracle best-test-epoch mean 75.19% (diagnostic, not used).
+- Test loss at selected epoch 4.92 vs 1.56 at 186 epochs: overconfident while accuracy still rises.
+- Caveat: one dataset, 5 seeds, changed architecture/optimiser: an optimised alternative, not a reproduction.
+- Code: src/mlp_adiac.py, scripts/summarize_mlp.py, scripts/run_mlp.sh; details in docs/README_MLP.md.

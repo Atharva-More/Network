@@ -1,0 +1,14 @@
+Keras-2017 baseline (5 seeds): mean 35.65  std 1.33  min 34.27  max 37.60
+  final-epoch mean 34.37; oracle best-test-epoch mean 48.23 (diagnostic)
+  training accuracy at selected epoch (dropout active): 60.8%  (paper states training accuracy 'almost all 100%')
+TF2 default-lr run: selected epoch 4983, train loss 2.729, test acc 22.51
+A1 (186 ep): mean 59.34  std 2.93
+O5 (5000 ep, min-train-loss): mean 73.45  std 2.29  median 72.89  min 70.84  max 75.96
+  final-epoch mean 72.48; oracle best-test-epoch mean 75.19 (diagnostic)
+  seeds above paper 75.2%: 2 of 5
+  selected epochs: [4994, 4750, 4823, 4956, 4970] (of 5000)
+  test loss at selected epoch: mean 4.92 (A1 mean 1.56)
+O5 vs paper (one-sample t): t=-1.71, p=0.163
+O5 vs Keras-2017 baseline (Welch t): t=31.93, p=2.60e-08
+O5 vs A1 same seeds (paired t): t=8.51, p=0.0010
+Parameters: original 3x500 MLP = 608,037; ours = 27,429

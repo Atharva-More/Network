@@ -1,0 +1,19 @@
+Seed 813306 | Train 0.6949 | Test 0.5550 | Test loss 1.7024
+Seed 813307 | Train 0.7436 | Test 0.6292 | Test loss 1.4929
+Seed 813308 | Train 0.7564 | Test 0.6036 | Test loss 1.5239
+Seed 813309 | Train 0.7641 | Test 0.6061 | Test loss 1.5258
+Seed 813310 | Train 0.7538 | Test 0.5729 | Test loss 1.5729
+
+OFFICIAL ADIAC TEST RESULTS
+  seed  epochs  train_accuracy  train_loss  test_accuracy  test_loss
+813306     186        0.694872    1.081729       0.554987   1.702398
+813307     186        0.743590    0.917598       0.629156   1.492906
+813308     186        0.756410    0.914324       0.603581   1.523869
+813309     186        0.764103    0.937377       0.606138   1.525798
+813310     186        0.753846    0.916567       0.572890   1.572895
+
+Mean test accuracy: 0.5933503746986389
+Median test accuracy: 0.6035805344581604
+Std test accuracy: 0.02932824414940106
+
+Published reference accuracy: 0.752
