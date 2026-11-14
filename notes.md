@@ -82,3 +82,8 @@
 - Controlled follow-up (scripts/run_resnet.py): 5 seeds at 300 epochs -> 0.2153 ± 0.0282 (range 0.18-0.25); 2 seeds at 1500 epochs -> 0.2200 ± 0.0433.
 - Reading: the first run and the paper's value sit at the favourable end of the seed distribution. The match is real, but one run does not establish the expected error.
 - Datasets within 2 test series of the paper (one seed): see results/resnet_paper_vs_ours.md, column "Within 2 series".
+
+## FCN improvement: SE blocks and label smoothing (src/fcn_variants.py)
+- First attempt (experiments/) selected the checkpoint by test accuracy (validation_data = test set): optimistic, not comparable with the paper. Replaced by a protocol that never uses test data during training.
+- Design: 4 variants (base, +SE, +LS 0.1, +SE+LS), same seeds, 300 epochs, selection by lowest training loss (paper) and last epoch both reported.
+- Results: see scripts/summarize_fcn.py output (to be filled in).
