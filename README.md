@@ -100,7 +100,8 @@ with 5.4× fewer parameters and ~3.4× faster training at no detectable accuracy
 
 ## Authors / contributions
 - Atharva More: environment and repo, FCN runs and SE/label-smoothing ablation, ResNet reproduction, label-bug scan, 1-D kernel analysis, tables and figures
-- Payal KR, Vansh: MLP reproduction and compact-MLP experiments (TODO: confirm exact split)
+- Payal KR,(TODO: confirm exact split)
+- Vansh: MLP baseline reproduction using historical and modern Docker environments; optimizer, regularization, and architecture optimization across three experimental phases; cross-validation and model selection; 186-epoch pilot testing and 5000-epoch evaluation; experimental logging, performance analysis, and comparison with the original paper's results. 
 
 Repository: https://github.com/Atharva-More/Network
 
