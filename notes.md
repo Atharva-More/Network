@@ -121,3 +121,18 @@
 - Test loss at selected epoch 4.92 vs 1.56 at 186 epochs: overconfident while accuracy still rises.
 - Caveat: one dataset, 5 seeds, changed architecture/optimiser: an optimised alternative, not a reproduction.
 - Code: src/mlp_adiac.py, scripts/summarize_mlp.py, scripts/run_mlp.sh; details in docs/README_MLP.md.
+in notes.md:
+Project Notes: SE-FCN & Training Dynamics
+
+1. Experimental Setup & Training Runs
+* **Models Tested:** Baseline FCN vs. Squeeze-and-Excitation FCN (SE-FCN).
+* **Dataset:** Adiac (UCR Time Series Archive).
+* **Training Duration:** Extended to 2,000 epochs to assess converged capacity rather than early training dynamics (overcoming the 300-epoch limitation).
+* **Optimization:** Adam optimizer with `ReduceLROnPlateau` schedule.
+ 2. Key Findings & Checkpoint Selection
+* **SE-FCN Performance:** Stabilizes test cross-entropy loss near $0.56$ and reaches **85.2% test accuracy** (0.148 error) at the minimum-training-loss checkpoint (epoch 1925). This closes most of the gap to Wang et al.'s 0.143 baseline (85.7%).
+* **Baseline FCN Comparison:** Reaches **84.1% test accuracy** (0.59 test loss) at epoch 1982.
+* **Kernel Architecture Impact:** Replacing square k times k kernels with true 1D length k times 1  kernels cuts FCN parameters by 4.2times while maintaining identical functionality and saving substantial training time.
+ 3. Deliverables & Artifacts
+* **Training Script:** Added `se_fcn.py` under `src/`.
+* **Figure Generation:** Saved comparative accuracy and loss curves under `results/se_fcn_vs_baseline_fcn_training_final.png`
