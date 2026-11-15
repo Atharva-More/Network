@@ -103,3 +103,11 @@ with 5.4× fewer parameters and ~3.4× faster training at no detectable accuracy
 - Payal KR, Vansh: MLP reproduction and compact-MLP experiments (TODO: confirm exact split)
 
 Repository: https://github.com/Atharva-More/Network
+
+In README:
+### Squeeze-and-Excitation FCN (SE-FCN)
+To run the 2,000-epoch SE-FCN training script and evaluate its performance against the 1D baseline on the Adiac dataset:
+```bash
+python src/se_fcn.py
+
+Training logs are stored in logs/ and the comparative training dynamics figures (comparing SE-FCN and Baseline FCN over 2,000 epochs) are saved in results/se_fcn_vs_baseline_fcn_training_final.png
